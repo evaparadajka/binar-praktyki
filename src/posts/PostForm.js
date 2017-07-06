@@ -1,47 +1,53 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
 
+import Button from "../user-inferface/Button";
+import styled from 'styled-components';
 class PostForm extends React.Component{
-  constructor(props){
-    super(props);
-    this.state={
-      title: "",
-      text: "",
-    };
-  }
+	constructor(props){
+		super(props);
+		this.state = {
+			title: "domsylne",
+		}
+	}
 
-  updateName1 = e => {
-    this.setState({
-        title: e.target.value,
-    });
-  };
+	updateName = e =>{
+		this.setState({
+		title: e.target.value,
+		});
+	}
 
-  updateName2 = e => {
-    this.setState({
-        text: e.target.value,
-    });
-  };
+	onSubmit= event =>{
+		event.preventDefault();
+		this.props.onSubmit({
+		title: this.state.title,
+		});
+	}
 
-  onSubmit = e => {
-    e.preventDefault();
-    this.props.onSubmit({
-      title: this.state.title,
-      text: this.state.text,
-    });
-  };
+	render(){
+	return(
 
-  render()
-  {
-    return(
-      <form>
-        <label>Title: </label>
-        <input onChange={this.updateName1} value={this.state.title}/>
-        <label>Textt: </label>
-        <input onChange={this.updateName2} value={this.state.text}/>
-        <button onClick={this.onSubmit}>add post</button>
-      </form>
-    )
-  }
+		<form><div className="panel panel-default" >
+			<div className="row" style={{padding:'5px'}}>
+				<div className="col-md-4">
+					<label>Tytul posta</label><br/>
+					<input
+						className="form-control"
+						style={{width:'200px'}}
+						onChange={this.updateName}
+						value={this.state.title} />
+				</div>
+
+				<div  >
+				<Button className="btn btn-success" label="Dodaj" onClick={this.onSubmit}/>
+				</div>
+			</div></div>
+		</form>
+
+
+	);
+	}
 }
+
+
 
 export default PostForm;
