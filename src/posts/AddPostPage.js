@@ -1,22 +1,16 @@
-// nowa podstrona AddPostPage
-//przeniesc koponent PostForm do AddPostPage
-//polaczyc komponent AddPostPage ze storem za pomaca connect
-
 import React from 'react';
 import {connect} from 'react-redux';
-import PostForm from './PostForm';
 import {withRouter} from 'react-router';
+
+import PostForm from './PostForm';
 
 class AddPostPage extends React.Component{
   addPost = post => {
     this.props.dispatch({type: "ADDPOST", post: {...post, timestamp: new Date().getTime()}});
     this.props.router.push("posts");
     // this.setState({
-    // 	posts:  [...this.state.posts, {...post,timestamp:new Date().getTime()}],
-    //
+    // posts:  [...this.state.posts, {...post,timestamp:new Date().getTime()}],
     // });
-    //
-    //this.props.injectedProp(this.props.posts.length+1);
   }
 
   render(){

@@ -1,22 +1,23 @@
 import React from "react";
 
-import Button from "../user-inferface/Button";
+import Button from "../user-interface/Button";
 import styled from 'styled-components';
+
 class PostForm extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			title: "domsylne",
+			title: "title-default",
 		}
 	}
 
-	updateName = e =>{
+	updateName = e => {
 		this.setState({
 		title: e.target.value,
 		});
 	}
 
-	onSubmit= event =>{
+	onSubmit = event => {
 		event.preventDefault();
 		this.props.onSubmit({
 		title: this.state.title,
@@ -24,30 +25,24 @@ class PostForm extends React.Component{
 	}
 
 	render(){
-	return(
-
-		<form><div className="panel panel-default" >
-			<div className="row" style={{padding:'5px'}}>
-				<div className="col-md-4">
-					<label>Tytul posta</label><br/>
-					<input
-						className="form-control"
-						style={{width:'200px'}}
-						onChange={this.updateName}
-						value={this.state.title} />
+		return(
+			<form><div className="panel panel-default">
+				<div className="row" style={{padding:'5px'}}>
+					<div className="col-md-4">
+						<label>Post tilte: </label><br/>
+						<input
+							className="form-control"
+							style={{width:'200px'}}
+							onChange={this.updateName}
+							value={this.state.title} />
+					</div>
+					<div>
+						<Button className="btn btn-success" label="Add" onClick={this.onSubmit}/>
+					</div>
 				</div>
-
-				<div  >
-				<Button className="btn btn-success" label="Dodaj" onClick={this.onSubmit}/>
-				</div>
-			</div></div>
-		</form>
-
-
-	);
+			</div></form>
+		);
 	}
 }
-
-
 
 export default PostForm;

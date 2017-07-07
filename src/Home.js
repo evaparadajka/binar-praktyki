@@ -10,9 +10,9 @@ class Home extends React.Component{
   render(){
     return (
       <div>
-      <button onClick={this.decrement}>decrement</button>
-        counter: {this.props.counter}
-      <button onClick={this.increment}>increment</button>
+        <button onClick={this.decrement}>decrement</button>
+          counter: {this.props.counter}
+        <button onClick={this.increment}>increment</button>
       </div>);
   }
 }
