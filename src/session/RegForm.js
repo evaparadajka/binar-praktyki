@@ -13,21 +13,21 @@ class RegForm extends React.Component {
     };
   }
 
-  updateMail = e => {
+  updateMail = event => {
     this.setState({
-      email: e.target.value
+      email: event.target.value
     });
   };
 
-  updatePass = e => {
+  updatePass = event => {
     this.setState({
-      password: e.target.value
+      password: event.target.value
     });
   };
 
-  updatePass1 = e => {
+  updatePass1 = event => {
     this.setState({
-      password1: e.target.value
+      password1: event.target.value
     });
   };
 

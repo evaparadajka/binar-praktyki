@@ -25,16 +25,11 @@ class Log extends React.Component {
     //this.props.dispatch({type: 'LOGIN', userMail: user.email})
   };
 
-  logOut = user => {
-    this.props.dispatch({ type: "LOGOUT", userMail: user.email });
-    this.props.router.push("/");
-  };
-
   render() {
     return (
       <div>
         <div />
-        <LogForm onSubmit={this.logIn} onSubmitOut={this.logOut} />
+        <LogForm onSubmit={this.logIn} />
       </div>
     );
   }

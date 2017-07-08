@@ -8,7 +8,7 @@ const user = (state = "guest", action) => {
     case "LOGIN":
       return (state = action.userMail);
     case "LOGOUT":
-      return (state = action.userMail);
+      return (state = "guest");
     default:
       return state;
   }
