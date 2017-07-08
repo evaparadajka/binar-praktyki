@@ -1,6 +1,7 @@
 import React from "react";
 
 import Button from "../user-interface/Button";
+import StyledPost from "../user-interface/StyledPost";
 import styled from "styled-components";
 
 class RegForm extends React.Component {
@@ -42,44 +43,45 @@ class RegForm extends React.Component {
 
   render() {
     return (
-      <form>
-        <div className="panel panel-default">
-          <div className="row" style={{ padding: "5px" }}>
-            <div className="col-md-4">
-              <label>Email</label>
-              <br />
-              <input
-                className="form-control"
-                style={{ width: "200px" }}
-                onChange={this.updateMail}
-                value={this.state.email}
-              />
-              <label>Password</label>
-              <br />
-              <input
-                className="form-control"
-                style={{ width: "200px" }}
-                onChange={this.updatePass}
-                value={this.state.password}
-              />
-              <label>Repeat password</label>
-              <br />
-              <input
-                className="form-control"
-                style={{ width: "200px" }}
-                onChange={this.updatePass1}
-                value={this.state.password1}
-              />
-            </div>
-            <div>
-              <Button
-                className="btn btn-success"
-                label="Register"
-                onClick={this.onSubmit}
-              />
+      <form style={{ margin: "5% 30%" }}>
+        <StyledPost>
+          <div>
+            <div className="row" style={{ padding: "2%" }}>
+              <div className="col-md-12">
+                <label>Email</label>
+                <br />
+                <input
+                  className="form-control"
+                  style={{ width: "100%" }}
+                  onChange={this.updateMail}
+                  value={this.state.email}
+                />
+                <label>Password</label>
+                <br />
+                <input
+                  className="form-control"
+                  style={{ width: "100%" }}
+                  onChange={this.updatePass}
+                  value={this.state.password}
+                />
+                <label>Repeat password</label>
+                <br />
+                <input
+                  className="form-control"
+                  style={{ width: "100%" }}
+                  onChange={this.updatePass1}
+                  value={this.state.password1}
+                />
+                <br />
+                <Button
+                  className="btn btn-success"
+                  label="REGISTER"
+                  onClick={this.onSubmit}
+                />
+              </div>
             </div>
           </div>
-        </div>
+        </StyledPost>
       </form>
     );
   }

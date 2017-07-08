@@ -48,7 +48,7 @@ class PostPage extends React.Component {
           <label>Search</label>
           <input
             className="form-control"
-            style={{ width: "800px", marginBottom: "10px" }}
+            style={{ width: "100%", marginBottom: "2%" }}
             onChange={this.search}
             value={this.state.phase}
           />
@@ -58,10 +58,6 @@ class PostPage extends React.Component {
     );
   }
 }
-
-const StyledPostList = styled(PostList)`
-margin-top:20px;
-`;
 
 const mapStateToProps = state => {
   return {

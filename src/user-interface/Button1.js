@@ -1,16 +1,18 @@
 import React from "react";
 
-class Button extends React.Component {
+class Button1 extends React.Component {
   render() {
     return (
       <button
         className="btn btn-success"
         style={{
+          color: "white",
           backgroundColor: "#d47e8c",
           borderColor: "#aaa",
-          float: "right",
+          width: "20%",
+          height: "100%",
           textAlign: "center",
-          marginLeft: "1%"
+          margin: "1%"
         }}
         onClick={this.props.onClick}
       >
@@ -20,4 +22,4 @@ class Button extends React.Component {
   }
 }
 
-export default Button;
+export default Button1;

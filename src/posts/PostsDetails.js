@@ -1,23 +1,29 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import StyledPost from "../user-interface/StyledPost";
+
 class PostDetails extends React.Component {
   render() {
     return (
-      <div>
-        <h3>Posts timestamp:</h3>
+      <StyledPost>
         <div>
-          {this.props.post.timestamp}
+          <h4>Post timestamp:</h4>
+          <div>
+            {this.props.post.timestamp}
+          </div>
+          <br />
+          <h4>Post title:</h4>
+          <div>
+            {this.props.post.title}
+          </div>
+          <br />
+          <h4>Post text:</h4>
+          <div>
+            {this.props.post.text}
+          </div>
         </div>
-        <h3>Post title:</h3>
-        <div>
-          {this.props.post.title}
-        </div>
-        <h3>Post text:</h3>
-        <div>
-          {this.props.post.text}
-        </div>
-      </div>
+      </StyledPost>
     );
   }
 }

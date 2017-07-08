@@ -1,7 +1,7 @@
 import React from "react";
 
 import Button from "../user-interface/Button";
-import styled from "styled-components";
+import StyledPost from "../user-interface/StyledPost";
 
 class Post extends React.Component {
   constructor(props) {
@@ -19,33 +19,23 @@ class Post extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="col-md-6">
         <StyledPost>
           <div>
-            title: {this.props.title}{" "}
+            Title: {this.props.title}{" "}
           </div>
           <div>
-            timestamp: {this.props.timestamp}
+            Timestamp: {this.props.timestamp}
           </div>
           <br />
-          <Button onClick={this.remove} label="DELETE" />
-          <Button onClick={this.show} label="SHOW" />
+          <div className="row" style={{ marginRight: "0%" }}>
+            <Button onClick={this.remove} label="DELETE" />
+            <Button onClick={this.show} label="SHOW" />
+          </div>
         </StyledPost>
       </div>
     );
   }
 }
-
-const StyledPost = styled.div`
-  border: 1px solid #aaa;
-  background-color: #ddd;
-  padding: 5px;
-  margin-bottom: 5px;
-  dispaly: flex;
-  justifyContent: space-between;
-  &:hover {
-    opacity: 0.7;
-  }
-`;
 
 export default Post;

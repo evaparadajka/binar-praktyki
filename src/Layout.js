@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router";
 import { connect } from "react-redux";
 
+import { StyledPreNavR, StyledPreNavL } from "./user-interface/StyledPreNav";
+import StyledNavbar from "./user-interface/StyledNavbar";
+
 class Layout extends React.Component {
   logOut = () => {
     this.props.dispatch({ type: "LOGOUT" });
@@ -12,17 +15,22 @@ class Layout extends React.Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-default">
-          <div
-            className="collapse navbar-collapse"
-            id="bs-example-navbar-collapse-1"
-          >
+        <div>
+          <StyledPreNavL>
+            {this.props.postsCount > 0
+              ? `Posts amount: ${this.props.postsCount}`
+              : "You don't have any posts."}
+          </StyledPreNavL>
+          <StyledPreNavR>
+            Welcome, {this.props.user}{" "}
+            <button onClick={this.logOut}>Log Out</button>
+          </StyledPreNavR>
+        </div>
+        <br />
+        <br />
+        <StyledNavbar>
+          <nav className="navbar">
             <ul className="nav navbar-nav">
-              <li className="">
-                {this.props.postsCount > 0
-                  ? `Posts amount: ${this.props.postsCount}`
-                  : "You don't have any posts."}
-              </li>
               <li className="">
                 <Link to="/">Home</Link>
               </li>
@@ -41,15 +49,9 @@ class Layout extends React.Component {
               <li className="">
                 <Link to="/registration">Sign up</Link>
               </li>
-              <li className="">
-                Welcome, {this.props.user}
-              </li>
-              <li className="">
-                <button onClick={this.logOut}>Log Out</button>
-              </li>
             </ul>
-          </div>
-        </nav>
+          </nav>
+        </StyledNavbar>
         <div className="container">
           {React.Children.map(this.props.children, c => React.cloneElement(c))}
         </div>

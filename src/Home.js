@@ -2,15 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { connect } from "react-redux";
 
+import Button1 from "./user-interface/Button1";
+
 class Home extends React.Component {
   increment = () => this.props.dispatch({ type: "INCREMENT" });
   decrement = () => this.props.dispatch({ type: "DECREMENT" });
 
   render() {
     return (
-      <div>
-        <button onClick={this.decrement}>decrement</button> counter:{" "}
-        {this.props.counter} <button onClick={this.increment}>increment</button>
+      <div style={{ textAlign: "center" }}>
+        <div className="col">
+          <Button1 onClick={this.decrement} label="DECREMENT" />
+          COUNTER: {this.props.counter}
+          <Button1 onClick={this.increment} label="INCREMENT" />
+        </div>
       </div>
     );
   }
