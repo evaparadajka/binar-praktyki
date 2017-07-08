@@ -1,12 +1,12 @@
 const initialState = {
   postsCollection: [
-    { title: "first", timestamp: 1 },
-    { title: "second", timestamp: 2 },
-    { title: "third", timestamp: 3 },
-    { title: "forth", timestamp: 4 },
-    { title: "fifth", timestamp: 5 },
-    { title: "sixth", timestamp: 6 },
-    { title: "seventh", timestamp: 7 }
+    { title: "first", text: "text1", timestamp: 1 },
+    { title: "second", text: "text2", timestamp: 2 },
+    { title: "third", text: "text3", timestamp: 3 },
+    { title: "forth", text: "text4", timestamp: 4 },
+    { title: "fifth", text: "text5", timestamp: 5 },
+    { title: "sixth", text: "text6", timestamp: 6 },
+    { title: "seventh", text: "text7", timestamp: 7 }
   ],
   postToShow: { title: "no post selected", timestamp: 0 },
   count: 7

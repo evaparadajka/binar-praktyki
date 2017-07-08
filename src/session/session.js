@@ -1,14 +1,14 @@
-// const initialState = {
-//   email: "guest",
-//   token: null
-// };
+const initialState = {
+  email: "guest",
+  token: false
+};
 
-const user = (state = "guest", action) => {
+const user = (state = initialState, action) => {
   switch (action.type) {
     case "LOGIN":
-      return (state = action.userMail);
+      return { email: action.userMail, token: true };
     case "LOGOUT":
-      return (state = "guest");
+      return { email: "guest", token: false };
     default:
       return state;
   }

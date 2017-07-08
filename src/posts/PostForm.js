@@ -7,7 +7,8 @@ class PostForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "title-default"
+      title: "Name your post here",
+      text: "Write your post here"
     };
   }
 
@@ -17,10 +18,17 @@ class PostForm extends React.Component {
     });
   };
 
+  updateName1 = event => {
+    this.setState({
+      text: event.target.value
+    });
+  };
+
   onSubmit = event => {
     event.preventDefault();
     this.props.onSubmit({
-      title: this.state.title
+      title: this.state.title,
+      text: this.state.text
     });
   };
 
@@ -37,6 +45,15 @@ class PostForm extends React.Component {
                 style={{ width: "200px" }}
                 onChange={this.updateName}
                 value={this.state.title}
+              />
+              <br />
+              <label>Post text: </label>
+              <br />
+              <input
+                className="form-control"
+                style={{ width: "200px" }}
+                onChange={this.updateName1}
+                value={this.state.text}
               />
             </div>
             <div>

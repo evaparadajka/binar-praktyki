@@ -30,6 +30,7 @@ class Log extends React.Component {
       <div>
         <div />
         <LogForm onSubmit={this.logIn} />
+        <a href="/#/registration">Create an account</a>
       </div>
     );
   }

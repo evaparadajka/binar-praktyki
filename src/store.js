@@ -11,9 +11,10 @@ const rootReducer = combineReducers({
   user: user
 });
 
-//const enhancer = compose(persistState("session");)
-//const store = createStore(rootReducer, {}, enhancer);
+const memoryUserPosts = ["user", "posts"];
+const enhancer = compose(persistState(memoryUserPosts));
+const store = createStore(rootReducer, {}, enhancer);
 
-const store = createStore(rootReducer);
+//const store = createStore(rootReducer);
 
 export default store;

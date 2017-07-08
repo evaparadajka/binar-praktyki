@@ -20,6 +20,7 @@ class PostList extends Component {
             Show={this.props.Show}
             key={d.timestamp}
             title={d.title}
+            text={d.text}
             timestamp={d.timestamp}
           />
         )}

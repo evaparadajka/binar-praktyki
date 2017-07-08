@@ -15,7 +15,7 @@ import Reg from "./session/Reg";
 class App extends Component {
   authenticateUser = (nextState, replace) => {
     const state = this.props.store.getState();
-    if (false /*!state.session.token czy user nie jest zalogowany */) {
+    if (!state.user.token /* czy user nie jest zalogowany */) {
       replace({
         pathname: "log"
       });

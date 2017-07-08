@@ -3,7 +3,11 @@ import { Link } from "react-router";
 import { connect } from "react-redux";
 
 class Layout extends React.Component {
-  logOut = () => this.props.dispatch({ type: "LOGOUT" });
+  logOut = () => {
+    this.props.dispatch({ type: "LOGOUT" });
+    //jakos odswiezyc strone
+    window.location.reload();
+  };
 
   render() {
     return (
@@ -20,7 +24,7 @@ class Layout extends React.Component {
                   : "You don't have any posts."}
               </li>
               <li className="">
-                <Link to="/">home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li className="">
                 <Link to="/posts">Post List</Link>
@@ -56,7 +60,8 @@ class Layout extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.user,
+    user: state.user.email,
+    token: state.user.token,
     postsCount: state.posts.count
   };
 };
