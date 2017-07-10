@@ -37,9 +37,7 @@ class Layout extends React.Component {
               <li className="">
                 <Link to="/posts">Post List</Link>
               </li>
-              <li className="">
-                <Link to="/posts-details">Post Details</Link>
-              </li>
+
               <li className="">
                 <Link to="/posts-add">Post Add</Link>
               </li>

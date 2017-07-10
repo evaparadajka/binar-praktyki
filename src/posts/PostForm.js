@@ -9,7 +9,7 @@ class PostForm extends React.Component {
     super(props);
     this.state = {
       title: "Name your post here",
-      text: "Write your post here"
+      body: "Write your post here"
     };
   }
 
@@ -21,7 +21,7 @@ class PostForm extends React.Component {
 
   updateName1 = event => {
     this.setState({
-      text: event.target.value
+      body: event.target.value
     });
   };
 
@@ -29,7 +29,7 @@ class PostForm extends React.Component {
     event.preventDefault();
     this.props.onSubmit({
       title: this.state.title,
-      text: this.state.text
+      body: this.state.body
     });
   };
 
@@ -55,7 +55,7 @@ class PostForm extends React.Component {
                   className="form-control"
                   style={{ width: "100%" }}
                   onChange={this.updateName1}
-                  value={this.state.text}
+                  value={this.state.body}
                 />
                 <br />
                 <Button

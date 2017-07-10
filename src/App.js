@@ -28,7 +28,7 @@ class App extends Component {
           <Route path="/" component={Layout} onEnter={this.authenticateUser}>
             <IndexRoute component={Home} />
             <Route path="posts" component={PostPage} />
-            <Route path="posts-details" component={PostsDetails} />
+            <Route path="posts-details/:id" component={PostsDetails} />
             <Route path="posts-add" component={AddPostPage} />
           </Route>
           <Route path="log" component={Log} />

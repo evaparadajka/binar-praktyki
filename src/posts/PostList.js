@@ -18,10 +18,11 @@ class PostList extends Component {
           <Post
             Delete={this.props.Delete}
             Show={this.props.Show}
-            key={d.timestamp}
+            key={d.id}
             title={d.title}
-            text={d.text}
-            timestamp={d.timestamp}
+            body={d.body}
+            timestamp={d.created_at}
+            {...d}
           />
         )}
       </div>

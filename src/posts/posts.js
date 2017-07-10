@@ -20,6 +20,12 @@ const posts = (state = initialState, action) => {
         postsCollection: [...state.postsCollection, action.post],
         count: state.count + 1
       };
+    case "FETCH_POSTS":
+      return {
+        ...state,
+        postsCollection: action.payload,
+        count: action.payload.length
+      };
     case "DELPOST":
       return {
         ...state,
@@ -31,9 +37,7 @@ const posts = (state = initialState, action) => {
     case "SHOW":
       return {
         ...state,
-        postToShow: state.postsCollection.find(
-          p => p.timestamp === action.timestamp
-        )
+        postToShow: state.postsCollection.find(p => p.id === action.key)
       };
     default:
       return state;

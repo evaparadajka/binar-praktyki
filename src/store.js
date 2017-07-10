@@ -11,8 +11,8 @@ const rootReducer = combineReducers({
   user: user
 });
 
-const memoryUserPosts = ["user", "posts"];
-const enhancer = compose(persistState(memoryUserPosts));
+//const memoryUserPosts = ["user", "posts"];
+const enhancer = compose(persistState("user"));
 const store = createStore(rootReducer, {}, enhancer);
 
 //const store = createStore(rootReducer);

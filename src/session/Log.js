@@ -9,19 +9,42 @@ import LogForm from "./LogForm";
 class Log extends React.Component {
   logIn = user => {
     axios
-      .post("https://praktyki-react.herokuapp.com/api/v1/registrations", {
+      .post("https://praktyki-react.herokuapp.com/api/v1/sessions", {
         user: { email: user.email, password: user.password }
       })
       .then(response => {
-        console.log(response);
-        this.props.dispatch({ type: "LOGIN", userMail: user.email });
-        this.props.router.push("/");
+        console.log(response.data.data.email);
+        this.props.dispatch({
+          type: "LOGIN",
+          data: {
+            email: response.data.data.email,
+            token: response.data.data.auth_token,
+            id: response.data.data.user_id
+          }
+        });
+        this.setState({ email: "", password: "" });
+        this.props.router.push("posts");
       })
       .catch(error => {
         console.log(error);
+        this.setState({ error: "Incorrect email or password" });
         alert("Incorrect email or password");
-        this.props.router.push("/log");
       });
+
+    // axios
+    //   .post("https://praktyki-react.herokuapp.com/api/v1/sessions", {
+    //     user: { email: user.email, password: user.password }
+    //   })
+    //   .then(response => {
+    //     console.log(response);
+    //     this.props.dispatch({ type: "LOGIN", email: user.email });
+    //     this.props.router.push("/");
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //     alert("Incorrect email or password");
+    //     this.props.router.push("/log");
+    //   });
     //this.props.dispatch({type: 'LOGIN', userMail: user.email})
   };
 
