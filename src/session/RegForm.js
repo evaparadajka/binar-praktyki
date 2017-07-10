@@ -8,7 +8,7 @@ class RegForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "you@gmail.com",
+      email: "",
       password: "",
       password1: ""
     };
@@ -59,6 +59,7 @@ class RegForm extends React.Component {
                 <label>Password</label>
                 <br />
                 <input
+                  type="password"
                   className="form-control"
                   style={{ width: "100%" }}
                   onChange={this.updatePass}
@@ -67,6 +68,7 @@ class RegForm extends React.Component {
                 <label>Repeat password</label>
                 <br />
                 <input
+                  type="password"
                   className="form-control"
                   style={{ width: "100%" }}
                   onChange={this.updatePass1}

@@ -51,6 +51,7 @@ class LogForm extends React.Component {
                 <label>Password</label>
                 <br />
                 <input
+                  type="password"
                   className="form-control"
                   style={{ width: "100%" }}
                   onChange={this.updatePass}
