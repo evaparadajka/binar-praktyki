@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import axios from "axios";
+import apiClient from "../lib/api-client";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 
@@ -9,8 +9,8 @@ import RegForm from "./RegForm";
 class Reg extends React.Component {
   register = user => {
     if (user.password === user.password1) {
-      axios
-        .post("https://praktyki-react.herokuapp.com/api/v1/registrations", {
+      apiClient
+        .post("/api/v1/registrations", {
           user: { email: user.email, password: user.password }
         })
         .then(response => {

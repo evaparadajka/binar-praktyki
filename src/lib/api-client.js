@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "https://praktyki-react.herokuapp.com/"
+  baseURL: "https://praktyki-react.herokuapp.com",
+  headers: { "Content-Type": "application/json", Accept: "application/json" }
 });
 
 const configureApi = store => {

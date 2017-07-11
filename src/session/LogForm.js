@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import Button from "../user-interface/Button";
 import StyledPost from "../user-interface/StyledPost";
@@ -65,6 +66,9 @@ class LogForm extends React.Component {
                 />
               </div>
             </div>
+            <a>
+              {this.props.status}
+            </a>
             <a href="/#/registration">Create an account</a>
           </div>
         </StyledPost>
@@ -73,4 +77,8 @@ class LogForm extends React.Component {
   }
 }
 
-export default LogForm;
+const mapStateToProps = state => {
+  status: state.user.status;
+};
+
+export default connect(mapStateToProps)(LogForm);
